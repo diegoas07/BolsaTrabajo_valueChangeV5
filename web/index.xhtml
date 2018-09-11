@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Formulario</title>
+    </h:head>
+    <h:body>
+        Formulario
+        <br/>
+        <h:messages globalOnly="true"></h:messages> 
+        <h:form>           
+            <br/>
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td>
+                            <h:outputLabel for="nombre" value="#{msgs['vacanteForm.nombre']}"/>
+                        </td>
+                        <td>
+                            <h:inputText id="nombre" required="true" requiredMessage="por favor escriba su nombre" value="#{candidato.nombre}"/>
+                        </td>
+                        <td>
+                            <h:message for="nombre"/>
+                        </td>
+                    </tr> 
+
+
+                    <tr>
+                        <td>
+                            <h:outputLabel for="apellido" value="#{msgs['vacanteForm.apellido']}" />
+                        </td>
+                        <td>
+                            <h:inputText id="apellido" required="true" requiredMessage="ingrese su apellido" value="#{candidato.apellido}" />
+                        </td>
+                        <td>
+                            <h:message for="apellido"/>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <h:outputLabel for="sueldoDeseado" value="#{msgs['vacanteForm.sueldoDeseado']}"/>
+                        </td>
+                        <td>
+                            <h:inputText id="sueldoDeseado" required="true" requiredMessage="el sueldo esta fuera de rango" value="#{candidato.sueldoDeseado}">
+                                <f:validateLongRange minimum="1000" maximum="50000"  />                 
+                            </h:inputText>
+                        </td>
+                        <td>
+                            <h:message for="sueldoDeseado"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel for="fechaNacimiento" value="#{msgs['vacanteForm.nacimiento']}"/>
+                        </td>
+                        <td>
+                            <h:inputText id="fechaNacimiento" required="true" value="#{candidato.fechaNacimiento}">
+                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                            </h:inputText>
+                        </td>
+                        <td>
+                            <h:message for="fechaNacimiento"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br/>
+            <h:commandButton action="#{vacanteForm.enviar}" value="#{msgs['vacanteForm.Enviar']}"/>
+        </h:form>
+    </h:body>
+</html>
+
