@@ -27,7 +27,9 @@ public class Candidato {
     private String nombre;
     private String apellido;
     private int sueldoDeseado;
-
+    private String ciudad;
+    private String colonia;
+    private String codigoPostal;
     /**
      * Get the value of nombre
      *
@@ -92,6 +94,48 @@ public class Candidato {
      */
     public void setFechaNacimiento(Date FechaNacimiento) {
         this.FechaNacimiento = FechaNacimiento;
+    }
+
+    /**
+     * @return the ciudad
+     */
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    /**
+     * @param ciudad the ciudad to set
+     */
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    /**
+     * @return the colonia
+     */
+    public String getColonia() {
+        return colonia;
+    }
+
+    /**
+     * @param colonia the colonia to set
+     */
+    public void setColonia(String colonia) {
+        this.colonia = colonia;
+    }
+
+    /**
+     * @return the codigoPostal
+     */
+    public String getCodigoPostal() {
+        return codigoPostal;
+    }
+
+    /**
+     * @param codigoPostal the codigoPostal to set
+     */
+    public void setCodigoPostal(String codigoPostal) {
+        this.codigoPostal = codigoPostal;
     }
 
 }
